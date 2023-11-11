@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.czarnecki</groupId>
+            <groupId>com.czarnecki.food.ordering</groupId>
             <artifactId>order-application-service</artifactId>
         </dependency>
         <dependency>

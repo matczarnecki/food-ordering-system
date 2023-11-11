@@ -19,7 +19,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.czarnecki</groupId>
+            <groupId>com.czarnecki.food.ordering</groupId>
             <artifactId>order-domain-core</artifactId>
         </dependency>
         <dependency>
