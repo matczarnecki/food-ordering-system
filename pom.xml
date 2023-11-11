@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.czarnecki</groupId>
+    <groupId>com.czarnecki.food.ordering</groupId>
     <artifactId>food-ordering-system</artifactId>
     <version>1.0-SNAPSHOT</version>
 
