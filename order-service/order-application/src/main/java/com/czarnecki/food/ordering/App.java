@@ -1,4 +1,4 @@
-package com.czarnecki.foodordering;
+package com.czarnecki.food.ordering;
 
 /**
  * Hello world!
