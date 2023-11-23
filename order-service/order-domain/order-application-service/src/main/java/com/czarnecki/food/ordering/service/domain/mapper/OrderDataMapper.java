@@ -33,7 +33,8 @@ public class OrderDataMapper {
     }
 
     public Order createOrderCommandToOrder(CreateOrderCommand createOrderCommand) {
-        return Order.builder().customerId(new CustomerId(createOrderCommand.getCustomerId()))
+        return Order.builder()
+                .customerId(new CustomerId(createOrderCommand.getCustomerId()))
                 .restaurantId(new RestaurantId(createOrderCommand.getRestaurantId()))
                 .deliveryAddress(orderAddressToStreetAddress(createOrderCommand.getAddress()))
                 .price(new Money(createOrderCommand.getPrice()))
@@ -41,9 +42,11 @@ public class OrderDataMapper {
                 .build();
     }
 
-    public CreateOrderResponse orderToCreateOrderResponse(Order order) {
-        return CreateOrderResponse.builder().orderTrackingId(order.getTrackingId().getValue())
+    public CreateOrderResponse orderToCreateOrderResponse(Order order, String message) {
+        return CreateOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .message(message)
                 .build();
     }
 
