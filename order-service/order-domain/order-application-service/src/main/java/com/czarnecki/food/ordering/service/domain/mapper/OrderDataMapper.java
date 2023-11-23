@@ -7,6 +7,7 @@ import com.czarnecki.food.ordering.domain.valueobject.RestaurantId;
 import com.czarnecki.food.ordering.service.domain.dto.create.CreateOrderCommand;
 import com.czarnecki.food.ordering.service.domain.dto.create.CreateOrderResponse;
 import com.czarnecki.food.ordering.service.domain.dto.create.OrderAddress;
+import com.czarnecki.food.ordering.service.domain.dto.track.TrackOrderResponse;
 import com.czarnecki.food.ordering.service.domain.entity.Order;
 import com.czarnecki.food.ordering.service.domain.entity.OrderItem;
 import com.czarnecki.food.ordering.service.domain.entity.Product;
@@ -43,6 +44,14 @@ public class OrderDataMapper {
     public CreateOrderResponse orderToCreateOrderResponse(Order order) {
         return CreateOrderResponse.builder().orderTrackingId(order.getTrackingId().getValue())
                 .orderStatus(order.getOrderStatus())
+                .build();
+    }
+
+    public TrackOrderResponse orderToTrackOrderResponse(Order order) {
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTrackingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
                 .build();
     }
 
