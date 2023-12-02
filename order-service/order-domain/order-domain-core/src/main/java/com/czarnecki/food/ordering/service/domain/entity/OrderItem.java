@@ -42,7 +42,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
 
         }
 
-        public Builder id(OrderItemId orderItemId) {
+        public Builder orderItemId(OrderItemId orderItemId) {
             this.orderItemId = orderItemId;
             return this;
         }
