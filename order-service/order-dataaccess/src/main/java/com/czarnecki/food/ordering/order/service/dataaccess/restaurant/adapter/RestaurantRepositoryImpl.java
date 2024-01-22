@@ -5,16 +5,19 @@ import com.czarnecki.food.ordering.order.service.dataaccess.restaurant.mapper.Re
 import com.czarnecki.food.ordering.order.service.dataaccess.restaurant.repository.RestaurantJpaRepository;
 import com.czarnecki.food.ordering.service.domain.entity.Restaurant;
 import com.czarnecki.food.ordering.service.domain.ports.output.repository.RestaurantRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Component
 public class RestaurantRepositoryImpl implements RestaurantRepository {
     private final RestaurantJpaRepository restaurantJpaRepository;
     private final RestaurantDataAccessMapper restaurantDataAccessMapper;
 
-    public RestaurantRepositoryImpl(RestaurantJpaRepository restaurantJpaRepository, RestaurantDataAccessMapper restaurantDataAccessMapper) {
+    public RestaurantRepositoryImpl(RestaurantJpaRepository restaurantJpaRepository,
+                                    RestaurantDataAccessMapper restaurantDataAccessMapper) {
         this.restaurantJpaRepository = restaurantJpaRepository;
         this.restaurantDataAccessMapper = restaurantDataAccessMapper;
     }
